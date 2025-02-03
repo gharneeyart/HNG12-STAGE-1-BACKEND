@@ -1,0 +1,22 @@
+{
+  "name": "number-classification-api",
+  "version": "1.0.0",
+  "description": "A simple API for classifying numbers as prime, perfect, or Armstrong, and providing fun facts.",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": []
+}
