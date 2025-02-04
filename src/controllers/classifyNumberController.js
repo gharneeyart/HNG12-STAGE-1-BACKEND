@@ -6,7 +6,7 @@ class ClassifyNumberController {
     async classifyNumber(req, res) {
         const { number } = req.query;
 
-        if (!number || isNaN(number)) {
+        if (!number || isNaN(number) || !Number.isInteger(parseFloat(number))) {
             return res.status(400).json({ number, error: true });
         }
 

@@ -2,9 +2,10 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 
 dotenv.config();
+
 class ClassifyNumberService {
     isPrime(num) {
-        if (num <= 1) return false;
+        if (num <= 1 || !Number.isInteger(num)) return false;
         for (let i = 2; i <= Math.sqrt(num); i++) {
             if (num % i === 0) return false;
         }
@@ -12,6 +13,7 @@ class ClassifyNumberService {
     }
 
     isPerfect(num) {
+        if (num <= 0 || !Number.isInteger(num)) return false;
         let sum = 0;
         for (let i = 1; i < num; i++) {
             if (num % i === 0) {
@@ -22,6 +24,7 @@ class ClassifyNumberService {
     }
 
     isArmstrong(num) {
+        if (num < 0 || !Number.isInteger(num)) return false;
         const digits = num.toString().split('');
         const power = digits.length;
         const sum = digits.reduce((acc, digit) => acc + Math.pow(Number(digit), power), 0);
@@ -36,8 +39,9 @@ class ClassifyNumberService {
         return properties;
     }
 
-getDigitSum(num) {
-        return num.toString().split('').reduce((acc, digit) => acc + Number(digit), 0);
+    getDigitSum(num) {
+        const digits = Math.abs(num).toString().split('');
+        return digits.reduce((acc, digit) => acc + Number(digit), 0) * Math.sign(num);
     }
 
     async fetchFunFact(num) {
