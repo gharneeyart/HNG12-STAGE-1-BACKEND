@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { ClassifyNumberRouter } from './routes/classifyNumberRoutes.js';
+import { ClassifyNumberRouter } from './src/routes/classifyNumberRoutes.js';
 
 dotenv.config();
 const app = express();
