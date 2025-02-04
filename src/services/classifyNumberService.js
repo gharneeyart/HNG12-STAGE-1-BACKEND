@@ -24,11 +24,11 @@ class ClassifyNumberService {
     }
 
     isArmstrong(num) {
-        if (num < 0 || !Number.isInteger(num)) return false;
-        const digits = num.toString().split('');
+        const absNum = Math.abs(num);
+        const digits = absNum.toString().split('');
         const power = digits.length;
         const sum = digits.reduce((acc, digit) => acc + Math.pow(Number(digit), power), 0);
-        return sum === num;
+        return sum === absNum;
     }
 
     getProperties(num) {
