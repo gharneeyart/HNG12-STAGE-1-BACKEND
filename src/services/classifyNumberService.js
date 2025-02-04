@@ -1,5 +1,7 @@
 import axios from 'axios';
+import dotenv from 'dotenv';
 
+dotenv.config();
 class ClassifyNumberService {
     isPrime(num) {
         if (num <= 1) return false;
@@ -34,12 +36,13 @@ class ClassifyNumberService {
         return properties;
     }
 
-    getDigitSum(num) {
+getDigitSum(num) {
         return num.toString().split('').reduce((acc, digit) => acc + Number(digit), 0);
     }
 
     async fetchFunFact(num) {
-        const response = await axios.get(`http://numbersapi.com/${num}?json`);
+        const apiUrl = process.env.NUMBERS_API_URL;
+        const response = await axios.get(`${apiUrl}/${num}?json`);
         return response.data.text;
     }
 
