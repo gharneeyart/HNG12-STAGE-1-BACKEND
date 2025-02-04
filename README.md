@@ -56,7 +56,7 @@ This endpoint classifies a number and returns its classification along with a fu
 
 ### Request
 ```
-GET <your-domain.com>/api/classify-number?number=371
+GET https://hng12-stage-1-backend.onrender.com/api/classify-number?number=371
 ```
 
 ### Response
