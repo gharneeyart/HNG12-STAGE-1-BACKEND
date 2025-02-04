@@ -39,10 +39,15 @@ class ClassifyNumberService {
         return properties;
     }
 
+    // getDigitSum(num) {
+    //     const digits = Math.abs(num).toString().split('');
+    //     return digits.reduce((acc, digit) => acc + Number(digit), 0) * Math.sign(num);
+    // }
     getDigitSum(num) {
         const digits = Math.abs(num).toString().split('');
-        return digits.reduce((acc, digit) => acc + Number(digit), 0) * Math.sign(num);
+        return digits.reduce((acc, digit) => acc + Number(digit), 0);
     }
+
 
     async fetchFunFact(num) {
         const apiUrl = process.env.NUMBERS_API_URL;
